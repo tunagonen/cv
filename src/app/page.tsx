@@ -27,7 +27,7 @@ export default function Page() {
             <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                href={RESUME_DATA.locationLink}
+                // href={RESUME_DATA?.locationLink}
                 target="_blank"
               >
                 <GlobeIcon className="size-3" />
@@ -87,10 +87,10 @@ export default function Page() {
             </div>
           </div>
 
-          <Avatar className="size-28">
+          {/* <Avatar className="size-28">
             <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-          </Avatar>
+          </Avatar> */}
         </div>
         <Section>
           <h2 className="text-xl font-bold">About</h2>
@@ -123,7 +123,7 @@ export default function Page() {
                       </span>
                     </h3>
                     <div className="text-sm tabular-nums text-gray-500">
-                      {work.start} - {work.end ?? "Present"}
+                      {work.start} - {work?.end ?? "Present"}
                     </div>
                   </div>
 
@@ -132,7 +132,11 @@ export default function Page() {
                   </h4>
                 </CardHeader>
                 <CardContent className="mt-2 text-xs">
-                  {work.description}
+                  <ul>
+                    {work.descriptions.map((description) => (
+                      <li className="mt-1">{description}</li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             );
@@ -154,6 +158,9 @@ export default function Page() {
                   </div>
                 </CardHeader>
                 <CardContent className="mt-2">{education.degree}</CardContent>
+                <CardContent className="mt-2 text-xs">
+                  {education.description}
+                </CardContent>
               </Card>
             );
           })}
@@ -187,10 +194,6 @@ export default function Page() {
 
       <CommandMenu
         links={[
-          {
-            url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
-          },
           ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
             url: socialMediaLink.url,
             title: socialMediaLink.name,

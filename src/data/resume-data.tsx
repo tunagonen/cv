@@ -6,7 +6,7 @@ export const RESUME_DATA = {
   location: "London, UK",
   about: "",
   summary:
-    "Full stack data scientist experienced on building data visualization and natural language processing applications, interested in large models and music AI.",
+    "Full stack data scientist experienced on building data visualization and natural language processing applications, proficient in Python and Typescript, interested in large models and music AI.",
   contact: {
     email: "tunagonen@gmail.com",
     tel: "+447904872456",
@@ -29,11 +29,7 @@ export const RESUME_DATA = {
       degree: "MEng (Master of Engineering in Engineering Science)",
       start: "2015",
       end: "2021",
-      description: `Relevant Modules: Machine learning (core learning algorithms - supervised/unsupervised, sampling
-methods for inference), Advanced Probability (Bayesian model selection, Bayesian regression with
-gaussian processes), Machine Vision and Robotics (convolutional neural networks), Advanced
-Communications (stochastic processes, information theory), Mathematical Techniques (dimensionality
-reduction and data transformation algorithms used in physical systems)`,
+      description: "2.i"
     },
   ],
   work: [

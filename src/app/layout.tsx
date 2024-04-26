@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "CV",
   description: "Tuna Gönen",
   icons: {
-    icon: '/cv/favicon.ico'
+    icon: './favicon.ico'
   }
 };
 

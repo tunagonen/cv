@@ -11,6 +11,9 @@ import { ProjectCard } from "@/components/project-card";
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name}`,
   description: RESUME_DATA.summary,
+  icons: {
+    icon: '/favicon.ico', // /public path
+  },
 };
 
 export default function Page() {

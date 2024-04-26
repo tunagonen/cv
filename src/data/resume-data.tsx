@@ -114,7 +114,7 @@ reduction and data transformation algorithms used in physical systems)`,
         "COVID timeseries similarity-based query and prediction engine.",
       link: {
         label: "VASAP Rampvis",
-        href: "https://github.com/ScottishCovidResponse",
+        href: "https://github.com/ScottishCovidResponse/",
       },
     },
     {

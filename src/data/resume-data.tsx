@@ -1,7 +1,7 @@
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 
 export const RESUME_DATA = {
-  name: "Tuna Gonen",
+  name: "Tuna Gönen",
   initials: "TG",
   location: "London, UK",
   about: "",

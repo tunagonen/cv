@@ -4,8 +4,6 @@
   "private": true,
   "homepage": "https://gitname.github.io/tunagonen.github.io",
   "scripts": {
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -41,7 +39,6 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
-    "gh-pages": "^6.1.1",
     "postcss": "^8",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",

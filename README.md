@@ -1,2 +1,2 @@
-- host minimalist cv from `https://github.com/BartoszJarocki/cv` in github pages.
+- host minimalist cv from `https://github.com/BartoszJarocki/cv` in github pages
 - <a href=https://tunagonen.github.io/cv>tunagonen.github.io/cv</a>

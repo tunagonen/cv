@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: RESUME_DATA.summary,
   icons: {
     icon: "./favicon.ico",
+    apple: "./apple-icon.png",
+    shortcut: "./favicon-16x16.png",
   },
 };
 

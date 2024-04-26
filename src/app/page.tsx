@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: `${RESUME_DATA.name}`,
   description: RESUME_DATA.summary,
   icons: {
-    icon: '/favicon.ico', // /public path
+    icon: '/cv/favicon.ico',
   },
 };
 

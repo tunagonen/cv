@@ -106,7 +106,7 @@ export default function Page() {
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base">
                     <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
-                      <a className="hover:underline" href={work.link}>
+                      <a className="hover:underline" href={work.link.href}>
                         {work.company}
                       </a>
 
@@ -134,7 +134,7 @@ export default function Page() {
                 <CardContent className="mt-2 text-xs">
                   <ul>
                     {work.descriptions.map((description) => (
-                      <li className="mt-1">{description}</li>
+                      <li key={description} className="mt-1">{description}</li>
                     ))}
                   </ul>
                 </CardContent>

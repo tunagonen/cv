@@ -39,7 +39,7 @@ reduction and data transformation algorithms used in physical systems)`,
   work: [
     {
       company: "Red Sift",
-      link: "https://redsift.com",
+      link: {href:"https://redsift.com"},
       badges: [],
       title: "Data Scientist",
       start: "Dec 2022",
@@ -53,7 +53,7 @@ reduction and data transformation algorithms used in physical systems)`,
     },
     {
       company: "King's College, Human Centred Computing Group",
-      link: "https://www.kcl.ac.uk/research/hcc",
+      link: {href:"https://www.kcl.ac.uk/research/hcc"},
       badges: [],
       title: "Research Software Engineer",
       start: "Mar 2022",
@@ -65,7 +65,7 @@ reduction and data transformation algorithms used in physical systems)`,
     },
     {
       company: "University of Oxford, e-Research Center",
-      link: "https://oerc.ox.ac.uk/",
+      link: {href:"https://oerc.ox.ac.uk/"},
       badges: [],
       title: "Research Software Engineer",
       start: "Jul 2021",
@@ -106,10 +106,6 @@ reduction and data transformation algorithms used in physical systems)`,
       ],
       description:
         "Supply chain threat detection and security monitoring system using NLP models",
-      link: {
-        label: null,
-        href: null,
-      },
     },
     {
       title: "VASAP",
@@ -126,10 +122,6 @@ reduction and data transformation algorithms used in physical systems)`,
       techStack: ["Next.js", "Sigma.js", "d3.js", "FastAPI"],
       description:
         "Circular plots and network diagrams for multi-omic datasets used by epigenetics researchers.",
-      link: {
-        label: null,
-        href: null,
-      },
     },
   ],
 } as const;

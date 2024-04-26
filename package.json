@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://gitname.github.io/tunagonen.github.io",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "pnpm run build",
     "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",

@@ -97,18 +97,18 @@ export default function Page() {
           </Avatar> */}
         </div>
         <Section>
-          <h2 className="text-xl font-bold">About</h2>
-          <p className="text-pretty font-mono text-sm text-muted-foreground">
+          <h2 className="text-l font-bold">About</h2>
+          <p className="text-pretty font-mono text-xs text-muted-foreground">
             {RESUME_DATA.summary}
           </p>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Work Experience</h2>
+          <h2 className="text-l font-bold">Work Experience</h2>
           {RESUME_DATA.work.map((work) => {
             return (
               <Card key={work.company}>
                 <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
+                  <div className="flex items-center justify-between gap-x-2 text-sm">
                     <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
                       <a className="hover:underline" href={work.link.href}>
                         {work.company}
@@ -118,7 +118,7 @@ export default function Page() {
                         {work.badges.map((badge) => (
                           <Badge
                             variant="secondary"
-                            className="align-middle text-xs"
+                            className="align-middle text-sm"
                             key={badge}
                           >
                             {badge}
@@ -126,7 +126,7 @@ export default function Page() {
                         ))}
                       </span>
                     </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
+                    <div className="text-xs tabular-nums text-gray-500">
                       {work.start} - {work?.end ?? "Present"}
                     </div>
                   </div>
@@ -149,7 +149,7 @@ export default function Page() {
           })}
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Publications</h2>
+          <h2 className="text-l font-bold">Publications</h2>
           <Card key="pubs">
             <CardContent className="mt-2 text-xs">
               <ul>
@@ -163,12 +163,12 @@ export default function Page() {
           </Card>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Education</h2>
+          <h2 className="text-l font-bold">Education</h2>
           {RESUME_DATA.education.map((education) => {
             return (
               <Card key={education.school}>
                 <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
+                  <div className="flex items-center justify-between gap-x-2 text-sm">
                     <h3 className="font-semibold leading-none">
                       {education.school}
                     </h3>
@@ -186,7 +186,7 @@ export default function Page() {
           })}
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Skills</h2>
+          <h2 className="text-l font-bold">Skills</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
               return <Badge key={skill}>{skill}</Badge>;
@@ -195,7 +195,7 @@ export default function Page() {
         </Section>
 
         <Section className="scroll-mb-16">
-          <h2 className="text-xl font-bold">Projects</h2>
+          <h2 className="text-l font-bold">Projects</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
             {RESUME_DATA.projects.map((project) => {
               return (

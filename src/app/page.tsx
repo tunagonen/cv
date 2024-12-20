@@ -149,6 +149,20 @@ export default function Page() {
           })}
         </Section>
         <Section>
+          <h2 className="text-xl font-bold">Publications</h2>
+          <Card key="pubs">
+            <CardContent className="mt-2 text-xs">
+              <ul>
+                {RESUME_DATA.publications.map((pub, index) => (
+                  <li key={index} className="mt-1">
+                    {pub}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </Section>
+        <Section>
           <h2 className="text-xl font-bold">Education</h2>
           {RESUME_DATA.education.map((education) => {
             return (

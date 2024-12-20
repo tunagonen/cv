@@ -29,13 +29,13 @@ export const RESUME_DATA = {
       degree: "MEng (Master of Engineering in Engineering Science)",
       start: "2015",
       end: "2021",
-      description: "2.i"
+      description: "2.i",
     },
   ],
   work: [
     {
       company: "Red Sift",
-      link: {href:"https://redsift.com"},
+      link: { href: "https://redsift.com" },
       badges: [],
       title: "Data Scientist",
       start: "Dec 2022",
@@ -49,7 +49,7 @@ export const RESUME_DATA = {
     },
     {
       company: "King's College, Human Centred Computing Group",
-      link: {href:"https://www.kcl.ac.uk/research/hcc"},
+      link: { href: "https://www.kcl.ac.uk/research/hcc" },
       badges: [],
       title: "Research Software Engineer",
       start: "Mar 2022",
@@ -61,7 +61,7 @@ export const RESUME_DATA = {
     },
     {
       company: "University of Oxford, e-Research Center",
-      link: {href:"https://oerc.ox.ac.uk/"},
+      link: { href: "https://oerc.ox.ac.uk/" },
       badges: [],
       title: "Research Software Engineer",
       start: "Jul 2021",
@@ -72,6 +72,10 @@ export const RESUME_DATA = {
         "⦿ Directed and refined iterative online surveys, and orchestrated 'think aloud' feedback sessions with target users to pinpoint necessary system enhancements and optimize user interface design.",
       ],
     },
+  ],
+  publications: [
+    '⦿ T. Gonen et al., "Visual Analytics based Search-Analyze-Forecast Framework for Epidemiological Time-series Data," 2023 IEEE VIS Workshop on Visualization for Pandemic and Emergency Responses (Vis4PandEmRes), Melbourne, Australia, 2023.',
+    '⦿ J. Dykes et al., "Visualization for epidemiological modelling: challenges, solutions, reflections and recommendations" Phil. Trans. R. Soc. , 2022.',
   ],
   skills: [
     "Statistical Modelling and Evaluation",

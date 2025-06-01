@@ -123,7 +123,7 @@ export default function Page() {
           <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
             Work Experience
           </h2>
-          {RESUME_DATA.work.map((work) => {
+          {RESUME_DATA.work.map((work, index) => {
             return (
               <Card key={work.company}>
                 <CardHeader>
@@ -170,7 +170,9 @@ export default function Page() {
                   </ul>
                 </CardContent>
 
-                <Separator orientation="horizontal" className="mt-2"/>
+                {index < RESUME_DATA.work.length - 1 && (
+                  <Separator orientation="horizontal" className="mt-2"/>
+                )}
               </Card>
             );
           })}

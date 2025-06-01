@@ -123,7 +123,7 @@ export default function Page() {
           <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
             Work Experience
           </h2>
-          {RESUME_DATA.work.map((work, index) => {
+          {RESUME_DATA.work.map((work, workIndex) => {
             return (
               <Card key={work.company}>
                 <CardHeader>
@@ -149,29 +149,36 @@ export default function Page() {
                         ))}
                       </span>
                     </h3>
-                    <div className={`text-xs tabular-nums  ${titleFontClassName}`} style={{ color: textColorHext }}>
-                      {work.start} - {work?.end ?? "Present"}
-                    </div>
                   </div>
-
-                  <h4 className={`text-sm leading-none ${titleFontClassName}`} style={{ color: titleColorHext }}>
-                    {work.title}
-                  </h4>
                 </CardHeader>
-                <CardContent className={`mt-2 text-xs ${textFontClassName}`}>
-                  <ul>
-                    {work.descriptions.map((description) => (
-                      <>
-                      <li key={description} className={`mt-1 ${textFontClassName}`}>
-                        {description}
-                      </li>
-                      </>
-                    ))}
-                  </ul>
-                </CardContent>
+                
+                {work.roles.map((role, roleIndex) => (
+                  <div key={`${work.company}-${role.title}-${role.start}`}>
+                    <CardHeader className={roleIndex > 0 ? "pt-6" : "pt-2"}>
+                      <div className="flex items-center justify-between gap-x-2 text-sm">
+                        <h4 className={`text-sm leading-none ${titleFontClassName}`} style={{ color: titleColorHext }}>
+                          {role.title}
+                        </h4>
+                        <div className={`text-xs tabular-nums  ${titleFontClassName}`} style={{ color: textColorHext }}>
+                          {role.start} - {role?.end ?? "Present"}
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className={`mt-2 text-xs ${textFontClassName}`}>
+                      <ul>
+                        {role.descriptions.map((description) => (
+                          <li key={description} className={`mt-1 ${textFontClassName}`}>
+                            {description}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                    
+                  </div>
+                ))}
 
-                {index < RESUME_DATA.work.length - 1 && (
-                  <Separator orientation="horizontal" className="mt-2"/>
+                {workIndex < RESUME_DATA.work.length - 1 && (
+                  <Separator orientation="horizontal" className="mt-4"/>
                 )}
               </Card>
             );

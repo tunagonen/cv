@@ -37,38 +37,57 @@ export const RESUME_DATA = {
       company: "Red Sift",
       link: { href: "https://redsift.com" },
       badges: [],
-      title: "Data Scientist",
-      start: "Dec 2022",
-      end: null,
-      descriptions: [
-        "⦿ Training of NLP models for proof-of-concept projects on text classification, utilizing both publicly available datasets and custom data collection through web scraping techniques.",
-        "⦿ Engineered and maintained scripts and Jupyter notebooks for the robust evaluation and monitoring of models in production environments, ensuring high reliability and performance.",
-        "⦿ Led the implementation and experimentation of new product features, incorporating new NLP methodologies such as fine-tuning of large language models (LLMs), and developing sophisticated systems through function calling and retrieval-augmented generation techniques.",
-        "⦿ Organized and facilitated brainstorming sessions and technical workshops with software engineers to foster innovation and share the latest advancements in Generative AI.",
+      roles: [
+        {
+          title: "Senior Data Scientist",
+          start: "Jan 2025",
+          end: null,
+          descriptions: [
+            "" ],
+        },
+        {
+          title: "Data Scientist",
+          start: "Dec 2022",
+          end: "Jan 2025",
+          descriptions: [
+            "⦿ Training of NLP models for proof-of-concept projects on text classification, utilizing both publicly available datasets and custom data collection through web scraping techniques.",
+            "⦿ Engineered and maintained scripts and Jupyter notebooks for the robust evaluation and monitoring of models in production environments, ensuring high reliability and performance.",
+            "⦿ Led the implementation and experimentation of new product features, incorporating new NLP methodologies such as fine-tuning of large language models (LLMs), and developing sophisticated systems through function calling and retrieval-augmented generation techniques.",
+            "⦿ Organized and facilitated brainstorming sessions and technical workshops with software engineers to foster innovation and share the latest advancements in Generative AI.",
+          ],
+        },
       ],
     },
     {
       company: "King's College, Human Centred Computing Group",
       link: { href: "https://www.kcl.ac.uk/research/hcc" },
       badges: [],
-      title: "Research Software Engineer",
-      start: "Mar 2022",
-      end: "Dec 2022",
-      descriptions: [
-        "⦿ Co-led the full-stack development of a visualization system tailored for epigenetics researchers, facilitating the exploration of connections between DNA methylation patterns and complex human traits using advanced network summarization and community detection algorithms.",
-        "⦿ Orchestrated interdisciplinary meetings with computer scientists and domain experts to benchmark existing systems and identify novel research opportunities in multi-omics data integration and analysis.",
+      roles: [
+        {
+          title: "Research Software Engineer",
+          start: "Mar 2022",
+          end: "Dec 2022",
+          descriptions: [
+            "⦿ Co-led the full-stack development of a visualization system tailored for epigenetics researchers, facilitating the exploration of connections between DNA methylation patterns and complex human traits using advanced network summarization and community detection algorithms.",
+            "⦿ Orchestrated interdisciplinary meetings with computer scientists and domain experts to benchmark existing systems and identify novel research opportunities in multi-omics data integration and analysis.",
+          ],
+        },
       ],
     },
     {
       company: "University of Oxford, e-Research Center",
       link: { href: "https://oerc.ox.ac.uk/" },
       badges: [],
-      title: "Research Software Engineer",
-      start: "Jul 2021",
-      end: "Feb 2022",
-      descriptions: [
-        "⦿ Responsible for the full-stack development of a multidimensional time-series search, visualization, and prediction system, empowering health experts and decision-makers to dissect and compare global pandemic trends. Incorporated time-series similarity and clustering algorithms, complemented by uncertainty visualization, to deliver critical insights.",
-        "⦿ Collaborated with a diverse team of academics from machine learning and data visualization fields to forge interactive Observable notebooks which includes state-of-the-art data-mining techniques and innovative dashboard designs tailored for helping governmental decision-making capabilities.",
+      roles: [
+        {
+          title: "Research Software Engineer",
+          start: "Jul 2021",
+          end: "Feb 2022",
+          descriptions: [
+            "⦿ Responsible for the full-stack development of a multidimensional time-series search, visualization, and prediction system, empowering health experts and decision-makers to dissect and compare global pandemic trends. Incorporated time-series similarity and clustering algorithms, complemented by uncertainty visualization, to deliver critical insights.",
+            "⦿ Collaborated with a diverse team of academics from machine learning and data visualization fields to forge interactive Observable notebooks which includes state-of-the-art data-mining techniques and innovative dashboard designs tailored for helping governmental decision-making capabilities.",
+          ],
+        },
       ],
     },
   ],
@@ -76,15 +95,10 @@ export const RESUME_DATA = {
     '⦿ T. Gonen et al., "Visual Analytics based Search-Analyze-Forecast Framework for Epidemiological Time-series Data," 2023 IEEE VIS Workshop on Visualization for Pandemic and Emergency Responses (Vis4PandEmRes), Melbourne, Australia, 2023.',
     '⦿ J. Dykes et al., "Visualization for epidemiological modelling: challenges, solutions, reflections and recommendations" Phil. Trans. R. Soc. , 2022.',
   ],
-  // skills: [
-  //   "Statistical Modelling and Evaluation",
-  //   "Model Deployment and Monitoring",
-  //   "Web Development with Next.js",
-  // ],
   projects: [
     {
       title: "RS Radar",
-      techStack: ["Next.js", "LLM APIs", "GraphQL", "BigQuery", "Vercel"],
+      techStack: ["Next.js","Langchain", "GraphQL", "GCP"],
       description:
         "Chatbot with RAG and function calling abilities for cybersecurity applications",
       link: {

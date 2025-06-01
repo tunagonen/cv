@@ -7,6 +7,9 @@ import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
+import { montserrat,ubuntuMono} from "./layout";
+import { Separator } from "@/components/ui/separator";
+
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name}`,
@@ -17,6 +20,11 @@ export const metadata: Metadata = {
     shortcut: "./favicon-16x16.png",
   },
 };
+const titleFontClassName = ubuntuMono.className
+const textFontClassName = montserrat .className
+const titleColorHext = "#ff6700"; // Hex color for the title
+const subtitleColorHext = "#2000CB"; // Hex color for the subtitle
+const textColorHext = "#000000"; // Hex color for the text
 
 export default function Page() {
   return (
@@ -24,21 +32,20 @@ export default function Page() {
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
-            <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
-            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
+            <h1 className={`text-2xl font-bold ${titleFontClassName}`} style={{color: titleColorHext}}>{RESUME_DATA.name}</h1>
+            <p className={`max-w-md text-pretty text-sm  ${textFontClassName}`}>
               {RESUME_DATA.about}
             </p>
-            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+            <p className={`max-w-md items-center text-pretty text-xs  ${textFontClassName}`}>
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                // href={RESUME_DATA?.locationLink}
                 target="_blank"
               >
                 <GlobeIcon className="size-3" />
                 {RESUME_DATA.location}
               </a>
             </p>
-            <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+            <div className="flex gap-x-1 pt-1 text-sm  print:hidden">
               {RESUME_DATA.contact.email ? (
                 <Button
                   className="size-8"
@@ -77,7 +84,7 @@ export default function Page() {
                 </Button>
               ))}
             </div>
-            <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
+            <div className={`hidden flex-col gap-x-1 text-sm  print:flex ${titleFontClassName}`}>
               {RESUME_DATA.contact.email ? (
                 <a href={`mailto:${RESUME_DATA.contact.email}`}>
                   <span className="underline">{RESUME_DATA.contact.email}</span>
@@ -90,27 +97,30 @@ export default function Page() {
               ) : null}
             </div>
           </div>
-
-          {/* <Avatar className="size-28">
-            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
-            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-          </Avatar> */}
         </div>
         <Section>
-          <h2 className="text-l font-bold">About</h2>
-          <p className="text-pretty font-mono text-xs text-muted-foreground">
+          <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
+            About
+          </h2>
+          <p className={`text-pretty text-xs  ${textFontClassName}`}>
             {RESUME_DATA.summary}
           </p>
         </Section>
         <Section>
-          <h2 className="text-l font-bold">Work Experience</h2>
+          <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
+            Work Experience
+          </h2>
           {RESUME_DATA.work.map((work) => {
             return (
               <Card key={work.company}>
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-sm">
-                    <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
-                      <a className="hover:underline" href={work.link.href}>
+                    <h3 className={`inline-flex items-center justify-center gap-x-1 font-semibold leading-none ${titleFontClassName}`}>
+                      <a
+                        className="hover:underline"
+                        href={work.link.href}
+                        style={{ color: textColorHext }}
+                      >
                         {work.company}
                       </a>
 
@@ -126,32 +136,38 @@ export default function Page() {
                         ))}
                       </span>
                     </h3>
-                    <div className="text-xs tabular-nums text-gray-500">
+                    <div className={`text-xs tabular-nums  ${titleFontClassName}`} style={{ color: textColorHext }}>
                       {work.start} - {work?.end ?? "Present"}
                     </div>
                   </div>
 
-                  <h4 className="font-mono text-sm leading-none">
+                  <h4 className={`text-sm leading-none ${titleFontClassName}`} style={{ color: titleColorHext }}>
                     {work.title}
                   </h4>
                 </CardHeader>
-                <CardContent className="mt-2 text-xs">
+                <CardContent className={`mt-2 text-xs ${textFontClassName}`}>
                   <ul>
                     {work.descriptions.map((description) => (
-                      <li key={description} className="mt-1">
+                      <>
+                      <li key={description} className={`mt-1 ${textFontClassName}`}>
                         {description}
                       </li>
+                      </>
                     ))}
                   </ul>
                 </CardContent>
+
+                <Separator orientation="horizontal" className="mt-2"/>
               </Card>
             );
           })}
         </Section>
         <Section>
-          <h2 className="text-l font-bold">Publications</h2>
+          <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
+            Publications
+          </h2>
           <Card key="pubs">
-            <CardContent className="mt-2 text-xs">
+            <CardContent className={`mt-2 text-xs ${textFontClassName}`}>
               <ul>
                 {RESUME_DATA.publications.map((pub, index) => (
                   <li key={index} className="mt-1">
@@ -163,39 +179,35 @@ export default function Page() {
           </Card>
         </Section>
         <Section>
-          <h2 className="text-l font-bold">Education</h2>
+          <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
+            Education
+          </h2>
           {RESUME_DATA.education.map((education) => {
             return (
               <Card key={education.school}>
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-sm">
-                    <h3 className="font-semibold leading-none">
+                    <h3 className={`font-bold leading-none ${titleFontClassName}`}>
                       {education.school}
                     </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
+                    <div className={`text-xs tabular-nums ${titleFontClassName}`}>
                       {education.start} - {education.end}
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="mt-2">{education.degree}</CardContent>
-                <CardContent className="mt-2 text-xs">
+                <CardContent className={`mt-2 text-xs ${textFontClassName}`}>{education.degree}</CardContent>
+                <CardContent className={`mt-2 text-xs ${textFontClassName}`}>
                   {education.description}
                 </CardContent>
               </Card>
             );
           })}
         </Section>
-        <Section>
-          <h2 className="text-l font-bold">Skills</h2>
-          <div className="flex flex-wrap gap-1">
-            {RESUME_DATA.skills.map((skill) => {
-              return <Badge key={skill}>{skill}</Badge>;
-            })}
-          </div>
-        </Section>
 
         <Section className="scroll-mb-16">
-          <h2 className="text-l font-bold">Projects</h2>
+          <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
+            Projects & Skills
+          </h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
             {RESUME_DATA.projects.map((project) => {
               return (
@@ -205,6 +217,11 @@ export default function Page() {
                   description={project.description}
                   tags={project.techStack}
                   link={"link" in project ? project.link.href : undefined}
+                  titleFontClassName={titleFontClassName}
+                  textFontClassName={textFontClassName}
+                  titleFontColor={textColorHext}
+                  textFontColor={textColorHext}
+                  badgeFontClassName={textFontClassName}
                 />
               );
             })}

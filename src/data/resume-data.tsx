@@ -68,8 +68,7 @@ export const RESUME_DATA = {
       end: "Feb 2022",
       descriptions: [
         "⦿ Responsible for the full-stack development of a multidimensional time-series search, visualization, and prediction system, empowering health experts and decision-makers to dissect and compare global pandemic trends. Incorporated time-series similarity and clustering algorithms, complemented by uncertainty visualization, to deliver critical insights.",
-        "⦿ Partnered with a diverse team of academics from machine learning and data visualization fields to forge interactive Observable notebooks which includes state-of-the-art data-mining techniques and innovative dashboard designs tailored for helping governmental decision-making capabilities.",
-        "⦿ Directed and refined iterative online surveys, and orchestrated 'think aloud' feedback sessions with target users to pinpoint necessary system enhancements and optimize user interface design.",
+        "⦿ Collaborated with a diverse team of academics from machine learning and data visualization fields to forge interactive Observable notebooks which includes state-of-the-art data-mining techniques and innovative dashboard designs tailored for helping governmental decision-making capabilities.",
       ],
     },
   ],
@@ -77,14 +76,14 @@ export const RESUME_DATA = {
     '⦿ T. Gonen et al., "Visual Analytics based Search-Analyze-Forecast Framework for Epidemiological Time-series Data," 2023 IEEE VIS Workshop on Visualization for Pandemic and Emergency Responses (Vis4PandEmRes), Melbourne, Australia, 2023.',
     '⦿ J. Dykes et al., "Visualization for epidemiological modelling: challenges, solutions, reflections and recommendations" Phil. Trans. R. Soc. , 2022.',
   ],
-  skills: [
-    "Statistical Modelling and Evaluation",
-    "Model Deployment and Monitoring",
-    "Web Development with Next.js",
-  ],
+  // skills: [
+  //   "Statistical Modelling and Evaluation",
+  //   "Model Deployment and Monitoring",
+  //   "Web Development with Next.js",
+  // ],
   projects: [
     {
-      title: "Red Sift Radar",
+      title: "RS Radar",
       techStack: ["Next.js", "LLM APIs", "GraphQL", "BigQuery", "Vercel"],
       description:
         "Chatbot with RAG and function calling abilities for cybersecurity applications",
@@ -94,7 +93,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Red Sift OnInbox & VendorSecure",
+      title: "RS OnInbox & VendorSecure",
       techStack: [
         "Web Scraping",
         "Scikit-Learn",

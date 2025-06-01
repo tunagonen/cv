@@ -7,8 +7,21 @@ import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
-import { montserrat,ubuntuMono} from "./layout";
 import { Separator } from "@/components/ui/separator";
+import { Ubuntu, Montserrat } from "next/font/google";
+
+// If loading a variable font, you don't need to specify the font weight
+
+const ubuntuMono = Ubuntu({
+  subsets:["latin"],
+  weight: "400",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 
 export const metadata: Metadata = {

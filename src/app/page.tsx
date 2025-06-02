@@ -12,9 +12,9 @@ import { Ubuntu, Montserrat } from "next/font/google";
 
 // If loading a variable font, you don't need to specify the font weight
 
-const ubuntuMono = Ubuntu({
+const ubuntuMono400 = Ubuntu({
   subsets:["latin"],
-  weight: "400",
+  weight: ["400","500","700"],
   display: "swap",
 });
 
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     shortcut: "./favicon-16x16.png",
   },
 };
-const titleFontClassName = ubuntuMono.className
+const titleFontClassName = ubuntuMono400.className
 const textFontClassName = montserrat .className
 const titleColorHext = "#ff6700"; // Hex color for the title
 const subtitleColorHext = "#2000CB"; // Hex color for the subtitle
@@ -45,7 +45,7 @@ export default function Page() {
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
-            <h1 className={`text-2xl font-bold ${titleFontClassName}`} style={{color: titleColorHext}}>{RESUME_DATA.name}</h1>
+            <h1 className={`text-2xl font-medium ${titleFontClassName}`} style={{color: titleColorHext}}>{RESUME_DATA.name}</h1>
             <p className={`max-w-md text-pretty text-sm  ${textFontClassName}`}>
               {RESUME_DATA.about}
             </p>
@@ -58,7 +58,7 @@ export default function Page() {
                 {RESUME_DATA.location}
               </a>
             </p>
-            <div className="flex gap-x-1 pt-1 text-sm  print:hidden">
+            <div className="flex gap-x-1 pt-1 text-xs  print:hidden">
               {RESUME_DATA.contact.email ? (
                 <Button
                   className="size-8"
@@ -112,23 +112,23 @@ export default function Page() {
           </div>
         </div>
         <Section>
-          <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
+          <h2 className={`text-base font-medium ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
             About
           </h2>
-          <p className={`text-pretty text-xs  ${textFontClassName}`}>
+          <p className={`text-xs  ${textFontClassName}`}>
             {RESUME_DATA.summary}
           </p>
         </Section>
         <Section>
-          <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
+          <h2 className={`text-base font-medium ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
             Work Experience
           </h2>
           {RESUME_DATA.work.map((work, workIndex) => {
             return (
               <Card key={work.company}>
                 <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-sm">
-                    <h3 className={`inline-flex items-center justify-center gap-x-1 font-semibold leading-none ${titleFontClassName}`}>
+                  <div className="flex items-center justify-between gap-x-2">
+                    <h3 className={`text-sm inline-flex items-center justify-center gap-x-1 font-medium leading-none ${titleFontClassName}`}>
                       <a
                         className="hover:underline"
                         href={work.link.href}
@@ -136,18 +136,6 @@ export default function Page() {
                       >
                         {work.company}
                       </a>
-
-                      <span className="inline-flex gap-x-1">
-                        {work.badges.map((badge) => (
-                          <Badge
-                            variant="secondary"
-                            className="align-middle text-sm"
-                            key={badge}
-                          >
-                            {badge}
-                          </Badge>
-                        ))}
-                      </span>
                     </h3>
                   </div>
                 </CardHeader>
@@ -155,19 +143,19 @@ export default function Page() {
                 {work.roles.map((role, roleIndex) => (
                   <div key={`${work.company}-${role.title}-${role.start}`}>
                     <CardHeader className={roleIndex > 0 ? "pt-6" : "pt-2"}>
-                      <div className="flex items-center justify-between gap-x-2 text-sm">
+                      <div className="flex items-center justify-between gap-x-2">
                         <h4 className={`text-sm leading-none ${titleFontClassName}`} style={{ color: titleColorHext }}>
                           {role.title}
                         </h4>
-                        <div className={`text-xs tabular-nums  ${titleFontClassName}`} style={{ color: textColorHext }}>
+                        <div className={`text-sm tabular-nums  ${titleFontClassName}`} style={{ color: textColorHext }}>
                           {role.start} - {role?.end ?? "Present"}
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent className={`mt-2 text-xs ${textFontClassName}`}>
+                    <CardContent className={`mt-2  text-xs ${textFontClassName}`}>
                       <ul>
                         {role.descriptions.map((description) => (
-                          <li key={description} className={`mt-1 ${textFontClassName}`}>
+                          <li key={description} className={`${textFontClassName}`}>
                             {description}
                           </li>
                         ))}
@@ -185,7 +173,7 @@ export default function Page() {
           })}
         </Section>
         <Section>
-          <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
+          <h2 className={`text-l font-medium ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
             Publications
           </h2>
           <Card key="pubs">
@@ -201,7 +189,7 @@ export default function Page() {
           </Card>
         </Section>
         <Section>
-          <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
+          <h2 className={`text-l font-medium ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
             Education
           </h2>
           {RESUME_DATA.education.map((education) => {
@@ -209,10 +197,10 @@ export default function Page() {
               <Card key={education.school}>
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-sm">
-                    <h3 className={`font-bold leading-none ${titleFontClassName}`}>
+                    <h3 className={`font-medium leading-none ${titleFontClassName}`}>
                       {education.school}
                     </h3>
-                    <div className={`text-xs tabular-nums ${titleFontClassName}`}>
+                    <div className={`tabular-nums ${titleFontClassName}`}>
                       {education.start} - {education.end}
                     </div>
                   </div>
@@ -227,7 +215,7 @@ export default function Page() {
         </Section>
 
         <Section className="scroll-mb-16">
-          <h2 className={`text-l font-bold ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
+          <h2 className={`text-l font-medium ${titleFontClassName}`} style={{ color: subtitleColorHext }}>
             Projects & Skills
           </h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
@@ -243,7 +231,7 @@ export default function Page() {
                   textFontClassName={textFontClassName}
                   titleFontColor={textColorHext}
                   textFontColor={textColorHext}
-                  badgeFontClassName={textFontClassName}
+                  badgeFontClassName={titleFontClassName}
                 />
               );
             })}

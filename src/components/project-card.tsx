@@ -52,7 +52,7 @@ export function ProjectCard({ title, description, tags, link, titleFontClassName
       <CardContent className="mt-auto flex">
         <div className={`mt-2 flex flex-wrap gap-1 ${badgeFontClassName || ""}`}> 
           {tags.map((tag) => (
-            <Badge variant="secondary" className={`px-1 py-0 text-[10px] ${badgeFontClassName}`} key={tag}>
+            <Badge variant="secondary" className={`px-1 py-0 text-[10px] font-medium ${badgeFontClassName}`} key={tag}>
               {tag}
             </Badge>
           ))}

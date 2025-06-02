@@ -50,10 +50,8 @@ export const RESUME_DATA = {
           start: "Dec 2022",
           end: "Jan 2025",
           descriptions: [
-            "⦿ Training of NLP models for proof-of-concept projects on text classification, utilizing both publicly available datasets and custom data collection through web scraping techniques.",
-            "⦿ Engineered and maintained scripts and Jupyter notebooks for the robust evaluation and monitoring of models in production environments, ensuring high reliability and performance.",
-            "⦿ Led the implementation and experimentation of new product features, incorporating new NLP methodologies such as fine-tuning of large language models (LLMs), and developing sophisticated systems through function calling and retrieval-augmented generation techniques.",
-            "⦿ Organized and facilitated brainstorming sessions and technical workshops with software engineers to foster innovation and share the latest advancements in Generative AI.",
+            "⦿ Led NLP model development cycle for strategic proof-of-concepts targeting supply-chain relationship detection and advanced phishing attack identification, orchestrating data collection from both internal databases and external web scraping, model training, deployment, and monitoring to validate technical feasibility and business viability of product pivots",
+            "⦿ Organized strategic product development sessions and workshops to transfer Generative AI expertise to software engineering teams, catalyzing the creation of 3 new product features through cross-functional collaboration",
           ],
         },
       ],
@@ -100,7 +98,7 @@ export const RESUME_DATA = {
       title: "RS Radar",
       techStack: ["Next.js","Langchain", "GraphQL", "GCP"],
       description:
-        "Chatbot with RAG and function calling abilities for cybersecurity applications",
+        "Cybersecurity agent for DNS, web and email security diagnostics and remediation",
       link: {
         label: "Redsift Radar",
         href: "https://radar.redsift.com",

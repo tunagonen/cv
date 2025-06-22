@@ -10,6 +10,8 @@ import { ProjectCard } from "@/components/project-card";
 import { Separator } from "@/components/ui/separator";
 import { Ubuntu, Montserrat } from "next/font/google";
 
+// If loading a variable font, you don't need to specify the font weight
+
 const ubuntuMono400 = Ubuntu({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -30,7 +32,6 @@ export const metadata: Metadata = {
     shortcut: "./favicon-16x16.png",
   },
 };
-
 const titleFontClassName = ubuntuMono400.className;
 const textFontClassName = montserrat.className;
 const titleColorHext = "#ff6700"; // Hex color for the title
@@ -158,7 +159,7 @@ export default function Page() {
                 {work.roles.map((role, roleIndex) => (
                   <div key={`${work.company}-${role.title}-${role.start}`}>
                     <CardHeader className={roleIndex > 0 ? "pt-6" : "pt-2"}>
-                      <div className="flex items-center justify-between gap-x-2">
+                      <div className="flex items-center justify-between">
                         <h4
                           className={`text-sm leading-none ${titleFontClassName}`}
                           style={{ color: titleColorHext }}
@@ -173,14 +174,12 @@ export default function Page() {
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent
-                      className={`mt-2 text-xs ${textFontClassName}`}
-                    >
+                    <CardContent className={`text-xs ${textFontClassName}`}>
                       <ul>
                         {role.descriptions.map((description) => (
                           <li
                             key={description}
-                            className={`${textFontClassName}`}
+                            className={`mt-2 ${textFontClassName}`}
                           >
                             {description}
                           </li>
@@ -208,7 +207,7 @@ export default function Page() {
             <CardContent className={`mt-2 text-xs ${textFontClassName}`}>
               <ul>
                 {RESUME_DATA.publications.map((pub, index) => (
-                  <li key={index} className="mt-1">
+                  <li key={index} className="mt-2">
                     {pub}
                   </li>
                 ))}

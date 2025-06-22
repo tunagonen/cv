@@ -79,14 +79,30 @@
   page-break-before: always;
 }
 
-/* Print styles for black and white output */
+/* Improved Print styles for black and white output */
 @media print {
+  /* Remove header and footer from print */
+  header,
+  footer {
+    display: none !important;
+    height: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* Add standard print-color-adjust property for compatibility */
   * {
     -webkit-print-color-adjust: exact !important;
-    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    /* filter: grayscale(100%) !important; */
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Only images are forced to grayscale */
+  img {
     filter: grayscale(100%) !important;
   }
-  
+
   /* Override CSS variables for print */
   :root {
     --background: 0 0% 100% !important;
@@ -109,62 +125,149 @@
     --input: 0 0% 80% !important;
     --ring: 0 0% 0% !important;
   }
-  
-  /* Force all inline styles to black and white */
-  h1, h2, h3, h4, h5, h6,
-  p, span, div, a, li,
+
+  /* Make all text black for print */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div,
+  a,
+  li,
   [style*="color"] {
     color: black !important;
   }
-  
-  /* Override specific background colors */
-  .bg-green-500,
-  [class*="bg-"],
-  [style*="background"] {
-    background-color: white !important;
-  }
-  
-  /* Small decorative elements like dots should be gray instead of colored */
-  .bg-green-500 {
-    background-color: #666 !important;
-  }
-  
-  /* Ensure all backgrounds are white or light gray for print */
-  body, 
-  div, 
-  section, 
-  article, 
-  aside, 
-  nav, 
-  header, 
-  footer {
+
+  /* Only override backgrounds for main containers and cards */
+  body,
+  .card,
+  .print-card,
+  .badge,
+  .bg-secondary,
+  .bg-white,
+  .bg-gray-100,
+  .bg-gray-200 {
     background: white !important;
     color: black !important;
   }
-  
-  /* Convert all images to grayscale */
-  img {
-    filter: grayscale(100%) !important;
-  }
-  
+
   /* Ensure borders and outlines are visible in black and white */
-  * {
+  .card,
+  .print-card,
+  .badge,
+  .border,
+  .border-gray-200,
+  .border-gray-300,
+  .border-gray-400 {
     border-color: #666 !important;
     outline-color: #666 !important;
   }
-  
-  /* Make sure text shadows and box shadows don't interfere */
-  * {
-    text-shadow: none !important;
-    box-shadow: none !important;
-  }
-  
-  /* Override any colored badges or buttons */
-  .bg-secondary,
+
+  /* Override any colored badges or buttons, including orange badges */
   .badge,
+  .bg-orange-500,
+  .bg-orange-400,
+  .bg-orange-300,
+  .bg-orange-200,
+  .bg-orange-100,
   button {
     background-color: #f5f5f5 !important;
     color: black !important;
     border-color: #ccc !important;
+  }
+
+  /* Avoid breaking inside cards or project boxes */
+  .card,
+  .print-card,
+  .project-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Add margin between sections for print clarity */
+  section,
+  .print-section {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Aggressive print styles for true black and white output */
+@media print {
+  /* Hide browser default header/footer (where supported) */
+  @page {
+    margin: 1.5cm;
+    size: auto;
+  }
+
+  /* Hide site header/footer */
+  header,
+  footer {
+    display: none !important;
+    height: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* Remove all color and background from badges, especially orange */
+  .badge,
+  .bg-orange-50,
+  .bg-orange-100,
+  .bg-orange-200,
+  .bg-orange-300,
+  .bg-orange-400,
+  .bg-orange-500,
+  .bg-orange-600,
+  .bg-orange-700,
+  .bg-orange-800,
+  .bg-orange-900,
+  [style*="background-color:#F97316"],
+  [style*="background-color: rgb(249, 115, 22)"],
+  [style*="background-color: #f59e42"],
+  [style*="background-color: orange"],
+  [class*="badge"],
+  [class*="bg-orange"] {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+  }
+
+  /* Remove all color from text and backgrounds */
+  *,
+  *:before,
+  *:after {
+    color: #000 !important;
+    background: #fff !important;
+    background-color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Only images are forced to grayscale */
+  img {
+    filter: grayscale(100%) !important;
+  }
+
+  /* Ensure borders are visible */
+  *,
+  .card,
+  .print-card,
+  .project-card,
+  .badge {
+    border-color: #000 !important;
+    outline-color: #000 !important;
+  }
+
+  /* Prevent page breaks inside cards */
+  .card,
+  .print-card,
+  .project-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }

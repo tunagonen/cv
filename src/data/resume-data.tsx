@@ -6,7 +6,7 @@ export const RESUME_DATA = {
   location: "London, UK",
   about: "",
   summary:
-    "Full stack data scientist experienced on building data visualization and natural language processing applications, proficient in Python and Typescript, interested in large models and music AI.",
+    "Full-stack data scientist specializing in AI-powered cybersecurity solutions and data visualization systems. Expert in Python and TypeScript with deep experience in NLP, large language models, and human-AI interaction design. Passionate about applying cutting-edge AI research to solve complex problems in cybersecurity, healthcare analytics, and music technology.",
   contact: {
     email: "tunagonen@gmail.com",
     tel: "+447904872456",
@@ -43,7 +43,8 @@ export const RESUME_DATA = {
           start: "Jan 2025",
           end: null,
           descriptions: [
-            "" ],
+            "⦿ Developed Radar, an intelligent cybersecurity agent that automates security workflows and accelerates threat analysis by designing a comprehensive system integrating internal APIs (blacklists, DMARC, SPF validation) with RAG-powered RFC knowledge retrieval, partnering with design and engineering teams to pioneer novel agent-human interaction paradigms while continuously tracking generative AI literature to implement cutting-edge techniques for workflow optimization.",
+          ],
         },
         {
           title: "Data Scientist",
@@ -51,7 +52,7 @@ export const RESUME_DATA = {
           end: "Jan 2025",
           descriptions: [
             "⦿ Led NLP model development cycle for strategic proof-of-concepts targeting supply-chain relationship detection and advanced phishing attack identification, orchestrating data collection from both internal databases and external web scraping, model training, deployment, and monitoring to validate technical feasibility and business viability of product pivots",
-            "⦿ Organized strategic product development sessions and workshops to transfer Generative AI expertise to software engineering teams, catalyzing the creation of 3 new product features through cross-functional collaboration",
+            "⦿ Organized strategic product development sessions and workshops to transfer Generative AI expertise to software engineering teams, catalyzing the creation of 3 new product features on AI-assisted asset discovery, email forensics summarization and DNS record fixing through cross-functional collaboration",
           ],
         },
       ],
@@ -96,7 +97,7 @@ export const RESUME_DATA = {
   projects: [
     {
       title: "RS Radar",
-      techStack: ["Next.js","Langchain", "GraphQL", "GCP"],
+      techStack: ["Next.js", "Langchain", "GraphQL", "GCP"],
       description:
         "Cybersecurity agent for DNS, web and email security diagnostics and remediation",
       link: {

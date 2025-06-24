@@ -255,7 +255,19 @@ export default function Page() {
           >
             Projects & Skills
           </h2>
-          <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
+          {/* Skills Section (dynamic from RESUME_DATA.skills) */}
+          {RESUME_DATA.skills && (
+            <div className={`mb-6 ${textFontClassName}`}>
+              <ul className="mt-2 list-inside list-disc space-y-1 text-xs">
+                {RESUME_DATA.skills.map((skill) => (
+                  <li key={skill.category}>
+                    <b>{skill.category}:</b> {skill.items.join(", ")}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {/* <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
             {RESUME_DATA.projects.map((project) => {
               return (
                 <ProjectCard
@@ -272,7 +284,7 @@ export default function Page() {
                 />
               );
             })}
-          </div>
+          </div> */}
         </Section>
       </section>
 

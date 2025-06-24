@@ -43,7 +43,8 @@ export const RESUME_DATA = {
           start: "Jan 2025",
           end: null,
           descriptions: [
-            "⦿ Developed Radar, an intelligent cybersecurity agent that automates security workflows and accelerates threat analysis by designing a comprehensive system integrating internal APIs (blacklists, DMARC, SPF validation) with RAG-powered RFC knowledge retrieval, partnering with design and engineering teams to pioneer novel agent-human interaction paradigms while continuously tracking generative AI literature to implement cutting-edge techniques for workflow optimization.",
+            "⦿ Built Radar, an intelligent cybersecurity agent that automates security workflows by integrating internal security APIs with RAG-powered knowledge retrieval, reducing manual threat analysis time by 10x.",
+            "⦿ Collaborated with design and engineering teams to develop innovative agent-human interaction patterns, staying current with generative AI research to implement advanced workflow optimization techniques.",
           ],
         },
         {
@@ -51,8 +52,9 @@ export const RESUME_DATA = {
           start: "Dec 2022",
           end: "Jan 2025",
           descriptions: [
-            "⦿ Led NLP model development cycle for strategic proof-of-concepts targeting supply-chain relationship detection and advanced phishing attack identification, orchestrating data collection from both internal databases and external web scraping, model training, deployment, and monitoring to validate technical feasibility and business viability of product pivots",
-            "⦿ Organized strategic product development sessions and workshops to transfer Generative AI expertise to software engineering teams, catalyzing the creation of 3 new product features on AI-assisted asset discovery, email forensics summarization and DNS record fixing through cross-functional collaboration",
+            "⦿ Led end-to-end NLP model development for supply-chain relationship detection and advanced phishing identification, processing millions of emails daily and achieving >90% accuracy through ensemble models with multiple classifiers.",
+            "⦿ Orchestrated complete ML pipeline from data collection (internal databases and web scraping) through model training, deployment, and monitoring to validate technical feasibility and business viability of strategic product pivots.",
+            "⦿ Organized strategic product development sessions and workshops to transfer Generative AI expertise to software engineering teams, catalyzing the creation of 3 new product features on AI-assisted asset discovery, email forensics summarization and DNS record fixing through cross-functional collaboration.",
           ],
         },
       ],
@@ -133,6 +135,36 @@ export const RESUME_DATA = {
       techStack: ["Next.js", "Sigma.js", "d3.js", "FastAPI"],
       description:
         "Circular plots and network diagrams for multi-omic datasets used by epigenetics researchers.",
+    },
+  ],
+  skills: [
+    {
+      category: "Languages",
+      items: ["Python", "TypeScript"],
+    },
+    {
+      category: "Modelling",
+      items: ["Scikit-learn", "PyTorch"],
+    },
+    {
+      category: "Data Visualization",
+      items: ["d3.js", "Sigma.js"],
+    },
+    {
+      category: "Web Dev/Deployment",
+      items: ["Next.js", "FastAPI", "Docker", "Vercel"],
+    },
+    {
+      category: "Cloud/MLOps",
+      items: ["AWS", "GCP", "Datadog", "Weights & Biases"],
+    },
+    {
+      category: "Databases",
+      items: ["BigQuery", "GraphQL"],
+    },
+    {
+      category: "GenAI",
+      items: ["Langchain", "Unsloth", "Hugging Face"],
     },
   ],
 } as const;
